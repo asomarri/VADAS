@@ -26,32 +26,10 @@ SO VADAS dictionary provides a way of representing word's maliciousness for each
 
 To show this with a concrete example, we can look at a common Local File Inclusion attack, "../../etc/passwd", and we get the following results:
 
-| etc        | Valence Score       |
-|---------------|:---------------------------------------------|
-| Benign        | 0.24713496976300683       |
-| SQLI        | 0       |
-| CMDI        | 0.6968856574329236       |
-| Protocol        | 0       |
-| XSS        | 0       |
-| XXE        | 0       |
-| LFI        | 0.9997131546027924       |
-| RFI        | 0       |
-| WAT        | 0       |
-| General        | 0.07689472947692488       |
-
-
-| passwd        | Valence Score       |
-|---------------|:---------------------------------------------|
-| Benign        | 0       |
-| SQLI        | 0       |
-| CMDI        | 0.7030303958182751       |
-| Protocol        | 0       |
-| XSS        | 0       |
-| XXE        | 0       |
-| LFI        | 0.9998158326189873       |
-| RFI        | 0       |
-| WAT        | 0       |
-| General        | 0.14571284009440577       |
+|         | Benign       | SQLI       | CMDI       | Protocol       | XSS       | XXE       | LFI       | RFI       | WAT       | General       |
+|---------------|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| etc        | 0.2471       | 0       | 0.6968       | 0       | 0       | 0       | 0.9997       | 0       | 0       | 0.0768       |
+| passwd        | 0       | 0       | 0.7030       | 0       | 0       | 0       | 0.9998       | 0       | 0       | 0.1457       |
 
 > [!IMPORTANT]
 > Few interesting things about these results:
