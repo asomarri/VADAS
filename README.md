@@ -59,7 +59,7 @@ To show this with a concrete example, we can look at a common Local File Inclusi
 > - Highest cosine score for both words comes from Local File Inclusion (LFI) model.
 > - Interesting enough, word *passwd* is not found in the benign dictionary. However, *etc* was found in the benign dictionary as this is commonly used to represent the word *etcetera*.
 
-VADAS purpose is to represent words' maliciousness in the context of **Web Application Security** with a minimal footprint vector (10-dimensional vector) that can be used in downstream NLP classification tasks.
+VADAS purpose is to represent words' maliciousness in the context of **Web Application Security** with a minimal footprint 10-dimensional vector that can be used in downstream NLP classification tasks.
 
 To use VADAS dictionary, make sure you decompress the VADAS dictionary zip file. Dictionary is in JSON format, which allows ease of use with programming languages, for example using Python:
 
