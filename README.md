@@ -53,10 +53,42 @@ To show this with a concrete example, we can look at a common Local File Inclusi
 | WAT        | 0       |
 | General        | 0.14571284009440577       |
 
-
-Few interesting things about these results:
-- We can see that both words appear in the same malicious dictionaries: local file inclusions (LFI), command injection (CMDI) and the General model.
-- Highest cosine score for both words comes from Local File Inclusion (LFI) model.
-- Interesting enough, word *passwd* is not found in the benign dictionary. However, *etc* was found in the benign dictionary as this is commonly used to represent the word *etcetera*.
+> [!IMPORTANT]
+> Few interesting things about these results:
+> - We can see that both words appear in the same malicious dictionaries: local file inclusions (LFI), command injection (CMDI) and the General model.
+> - Highest cosine score for both words comes from Local File Inclusion (LFI) model.
+> - Interesting enough, word *passwd* is not found in the benign dictionary. However, *etc* was found in the benign dictionary as this is commonly used to represent the word *etcetera*.
 
 VADAS purpose is to represent words' maliciousness in the context of **Web Application Security** with a minimal footprint vector (10-dimensional vector) that can be used in downstream NLP classification tasks.
+
+To use VADAS dictionary, make sure you decompress the VADAS dictionary zip file. Dictionary is in JSON format, which allows ease of use with programming languages, for example using Python:
+
+```python
+import json
+with open('vadas/vadas_dictionary.json') as f:
+    vadas_dictionary = json.load(f)
+
+vadas_dictionary['etc']
+```
+```bash
+{'benign': 0.24713496976300683,
+ 'sqli': 0,
+ 'cmdi': 0.6968856574329236,
+ 'lfi': 0.9997131546027924,
+ 'protocol': 0,
+ 'rfi': 0,
+ 'wat': 0,
+ 'xss': 0,
+ 'xxe': 0,
+ 'general': 0.07689472947692488,
+ 'vector': [0.24713496976300683,
+  0,
+  0.6968856574329236,
+  0,
+  0,
+  0.9997131546027924,
+  0,
+  0,
+  0,
+  0.07689472947692488]}
+```
